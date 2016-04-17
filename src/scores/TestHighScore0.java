@@ -1,79 +1,89 @@
 package scores;
 import java.util.*;
+import java.io.*;
 
-import java.io.*;			
 		
 public class TestHighScore0 {
 
-	public int[] toIntArray(List list){
-		System.out.println("entered tointarray");
-	  	int[] ret = new int[list.size()];
-	  	System.out.println("created result");
-	  	for(int i = 0;i < ret.length;i++){
-	    	ret[i] = (int)list.get(i);
-	    	System.out.println("added one value"+i);}
 
-	  	return ret;
-}
+	/**
+		Get username from standard input ad return it
+		@return username
+	*/
 
-	public String askName(){
+	private String askName(){
 		System.out.print("      your name : ");
 		Scanner sc = new Scanner(System.in);
 		String name= sc.nextLine();
 		return name;
 	}
 
-	public int[] readScores(){
+	/**
+		reads the scores from the csv file
+		@return a linkedlist containing the scores
+	*/
 
-		String filePath  = "C:/Users/soumia/Desktop/AyoubJava/JavaProject/src/scores/scoreFile.csv";
-	BufferedReader br = null;
-	String line = "";
-	String separator = ",";
-	LinkedList list = new LinkedList(); 
+	private List readScores(){
 
-	try {
+		String filePath  = "C:/Users/ayoub/Desktop/ProjetJava/JavaProject/src/scores/scoreFile.csv";
+		BufferedReader br = null;
+		String line = "";
+		String separator = ",";
+		LinkedList list = new LinkedList(); 
 
-		br = new BufferedReader(new FileReader(filePath));
-		while ((line = br.readLine()) != null) {
+		try {
 
-		        // use comma as separator
-			String[] score = line.split(separator);
-			list.add(Integer.parseInt(score[0]));
-			
-		}
+			br = new BufferedReader(new FileReader(filePath));
+			while ((line = br.readLine()) != null) {
 
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
-	} catch (IOException e) {
-		e.printStackTrace();
-	} finally {
-		if (br != null) {
-			try {
-				br.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+			        // use comma as separator
+				String[] score = line.split(separator);
+				list.add(Integer.parseInt(score[0]));
+				
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-	}
 
-
-	return toIntArray(list);
+		return list;
 }
 
-public int chooseFromTab(int[] tab){
-	Random rand = new Random();
-	return  tab[rand.nextInt(tab.length)];
+	/**
+		randomly picks a value from the list given
+		@param tab : list of integers containing the scores
+		@return the chosen value
+	*/
+	private int chooseFromTab(List tab){
+		Random rand = new Random();
+		return (int)tab.get(rand.nextInt(tab.size()));
 
 }
 
-
+	/**
+		simulate a game
+		@param args unused 
+	*/
 	public static void main(String[] args) {
 
 		TestHighScore0 test = new TestHighScore0();
-		System.out.println("created");
 		String name = test.askName();
-		System.out.println("askedName");
-		System.out.println(name+test.chooseFromTab(test.readScores()));
+		//Highscore0 highScores = new Highscore0();
+		//highScore.getScores();
+		//afficher les anciens scores
+		int score = test.chooseFromTab(test.readScores());
+
+		System.out.println("      "+name+" : "+score);
 
 	}
 }

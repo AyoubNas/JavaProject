@@ -1,5 +1,5 @@
 package scores;
 import java.util.*;
 
-public class Hiscore0 {
+public class HighScore0 {
 }
