@@ -5,13 +5,18 @@ import java.io.*;
 
 public class HighScore1 {
   
+  	/**
+  	 * Constructor of the HighScore class
+  	 **/
+
   	public HighScore() {	
 	}
 	
 	
-	/**Create a connection between the score file written in the URL (feed.csv) and the HighScore class
-	* thanks to a created bufferedReader, we can read each line of the file then print them
-	**/
+	/**
+	 * Return all the lines of the feed.csv file (on our ThingSpeak channel)
+	 **/
+	 
 	public void getScores(){
 
 		try {
