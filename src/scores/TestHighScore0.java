@@ -78,8 +78,8 @@ public class TestHighScore0 {
 
 		TestHighScore0 test = new TestHighScore0();
 		String name = test.askName();
-		//Highscore0 highScores = new Highscore0();
-		//highScore.getScores();
+		Highscore1 highScores = new Highscore1();
+		highScores.getScores();
 		//afficher les anciens scores
 		int score = test.chooseFromTab(test.readScores());
 

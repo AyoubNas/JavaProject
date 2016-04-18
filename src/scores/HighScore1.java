@@ -2,6 +2,7 @@ package scores;
 import java.util.*;
 import java.net.*;
 import java.io.*;
+import scores.*;
 
 public class HighScore1 {
   
@@ -9,7 +10,7 @@ public class HighScore1 {
   	 * Constructor of the HighScore class
   	 **/
 
-  	public HighScore() {	
+  	public void HighScore() {	
 	}
 	
 	
