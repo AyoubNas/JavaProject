@@ -5,13 +5,13 @@ import java.io.*;
 
 public class HighScore1 {
   
-  public HighScore() {	
+  	public HighScore() {	
 	}
 	
 	
 	/**Create a connection between the score file written in the URL (feed.csv) and the HighScore class
-	 * thanks to a created bufferedReader, we can read each line of the file then print them
-	 **/
+	* thanks to a created bufferedReader, we can read each line of the file then print them
+	**/
 	public void getScores(){
 
 		try {
