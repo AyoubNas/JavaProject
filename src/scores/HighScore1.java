@@ -22,14 +22,15 @@ public class HighScore1 {
 		BufferedReader buff = new BufferedReader(inStream);
 		
 		while (true){
-            String nextLine = buff.readLine();  
-            if (nextLine !=null){
-            	System.out.println(nextLine);
-            }
-            else {
-            	break;
-            	}
-			}
+            		String nextLine = buff.readLine();  
+            		if (nextLine !=null){
+            			System.out.println(nextLine);
+            		}
+            		else {
+            			break;
+            		}
+		}
+		
 		inStream.close();
 		
 		} catch (Exception e) { e.printStackTrace(); }
