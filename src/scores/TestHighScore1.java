@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 		
-public class TestHighScore0 {
+public class TestHighScore1 {
 
 
 	/**
@@ -76,7 +76,7 @@ public class TestHighScore0 {
 	*/
 	public static void main(String[] args) {
 
-		TestHighScore0 test = new TestHighScore0();
+		TestHighScore1 test = new TestHighScore1();
 		String name = test.askName();
 		HighScore1 highScores = new HighScore1();
 		System.out.println("   Score table\n");
