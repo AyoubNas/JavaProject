@@ -76,20 +76,26 @@ public class TestHighScore2 {
 	*/
 	public static void main(String[] args) {
 
+		//get player name
 		TestHighScore2 test = new TestHighScore2();
 		String name = test.askName();
+
+		//create HighScores2 instance
 		HighScore2 highScores = new HighScore2();
 		System.out.println("   Score table");
-		LinkedList oldScores=highScores.getScores();
-		String[] oldScoresArray=oldScores.toArray();
-		BestPlayer2[] tenBest = tenBestScores(oldScoresArray);
-		
-		//afficher les anciens scores
-		System.out.println("......");
-		for (int i=0;i<tenBest.length;i++){
 
-			String[] parts = ((String)oldScores.get(i)).split(",");          			
-            System.out.println("   "+parts[3]+" : "+parts[2]);
+		//get all the stored scores
+		String[] oldScoresArray=highScores.getScores();
+		//pick the 10 best ones;
+		BestPlayer2[] tenBest = highScores.tenBestScores(oldScoresArray);
+		
+		//afficher les 10 scores
+		System.out.println("......");
+
+		for (int i=0;i<oldScoresArray.length;i++){
+
+			String[] parts = (oldScoresArray[i]).split(",");          			
+            System.out.println("   "+tenBest[i].getName()+" : "+tenBest[i].getScore());
 		}
 		System.out.println("......");
 		int score = test.chooseFromTab(test.readScores());

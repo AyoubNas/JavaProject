@@ -18,9 +18,10 @@ public class HighScore2 {
 	 * Return all the lines of the feed.csv file (on our ThingSpeak channel)
 	 **/
 	 
-	public LinkedList getScores(){
+	public String[] getScores(){
 
-		LinkedList results = new LinkedList();
+		//LinkedList results = new LinkedList();
+		List<String> results = new ArrayList<String>();
 
 
 
@@ -50,23 +51,49 @@ public class HighScore2 {
 		
 		} catch (Exception e) { e.printStackTrace(); }
 
-		return results;
+		return results.toArray(new String[1]);
 		
 		
 	}
 
-	private BestPlayer2[] tenBestScores(String [] readScores){
+	public BestPlayer2[] tenBestScores(String [] readScores){
 
 		BestPlayer2[] allBest= new BestPlayer2[readScores.length];
 
 		for(int i=0;i<readScores.length;i++){
 			String[] parts = ((String)readScores[i]).split(",");
-			allBest[i]=new BestPlayer2(parts[3],parts[2]);
+			allBest[i]=new BestPlayer2();
+			allBest[i].setName(parts[3]);
+			allBest[i].setScore(Integer.parseInt(parts[2]));
+			//System.out.println(i+" "+allBest[i].getName()+" "+allBest[i].getScore());
+		}
+		System.out.println(allBest.length);
+
+		int i=0;
+		int j=0;
+		//LinkedList resList= new LinkedList();
+		List<BestPlayer2> resList = new ArrayList<BestPlayer2>();
+		BestPlayer2 mem;
+
+		while((i<allBest.length) && (i<10)){
+			mem= allBest[0];
+
+			for(j=0;j<allBest.length;j++){
+				
+				if((allBest[j].compareTo(mem)>=0)&& !(resList.contains(allBest[j]))){
+
+					mem=allBest[j];
+				}
+			}
+
+			resList.add(mem);
+			i++;
+
 		}
 
 
 
-		return;
+		return resList.toArray(new BestPlayer2[1]);
 	}
   
 }

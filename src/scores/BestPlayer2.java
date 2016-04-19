@@ -2,12 +2,12 @@ package scores;
 import java.util.*;
 import java.io.*;
 
-public abstract class BestPlayer2 implements Comparable{
+public class BestPlayer2{
 
 	String name=new String();
 	int score=0;
 
-	public void BestPlayer2(String nm, int scr){
+	void BestPlayer2(String nm, int scr){
 
 		score=scr;
 		name=nm;
