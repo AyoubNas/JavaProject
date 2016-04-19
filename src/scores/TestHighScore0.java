@@ -78,12 +78,20 @@ public class TestHighScore0 {
 
 		TestHighScore0 test = new TestHighScore0();
 		String name = test.askName();
-		Highscore1 highScores = new Highscore1();
-		highScores.getScores();
+		HighScore1 highScores = new HighScore1();
+		System.out.println("   Score table\n");
+		LinkedList oldScores=highScores.getScores();
 		//afficher les anciens scores
+		System.out.println("......");
+		for (int i=0;i<oldScores.size();i++){
+
+			String[] parts = ((String)oldScores.get(i)).split(",");          			
+            System.out.println("   "+parts[3]+" : "+parts[2]);
+		}
+		System.out.println("......");
 		int score = test.chooseFromTab(test.readScores());
 
-		System.out.println("      "+name+" : "+score);
+		System.out.println("\n"+	"      "+name+" : "+score);
 
 	}
 }
