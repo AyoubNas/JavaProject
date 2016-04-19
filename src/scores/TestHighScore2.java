@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 		
-public class TestHighScore1 {
+public class TestHighScore2 {
 
 
 	/**
@@ -57,7 +57,7 @@ public class TestHighScore1 {
 		}
 
 		return list;
-}
+	}
 
 	/**
 		randomly picks a value from the list given
@@ -68,7 +68,7 @@ public class TestHighScore1 {
 		Random rand = new Random();
 		return (int)tab.get(rand.nextInt(tab.size()));
 
-}
+	}
 
 	/**
 		simulate a game
@@ -76,15 +76,17 @@ public class TestHighScore1 {
 	*/
 	public static void main(String[] args) {
 
-		TestHighScore1 test = new TestHighScore1();
+		TestHighScore2 test = new TestHighScore2();
 		String name = test.askName();
-		HighScore1 highScores = new HighScore1();
-		System.out.println("   Score table\n");
+		HighScore2 highScores = new HighScore2();
+		System.out.println("   Score table");
 		LinkedList oldScores=highScores.getScores();
-		System.out.println("length"+oldScores.size());
+		String[] oldScoresArray=oldScores.toArray();
+		BestPlayer2[] tenBest = tenBestScores(oldScoresArray);
+		
 		//afficher les anciens scores
 		System.out.println("......");
-		for (int i=0;i<oldScores.size();i++){
+		for (int i=0;i<tenBest.length;i++){
 
 			String[] parts = ((String)oldScores.get(i)).split(",");          			
             System.out.println("   "+parts[3]+" : "+parts[2]);
