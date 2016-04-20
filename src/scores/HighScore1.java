@@ -4,6 +4,11 @@ import java.net.*;
 import java.io.*;
 import scores.*;
 
+	/**
+		@author Jean Miquel and Ayoub Nasraddine
+		@version 1
+	*/
+
 public class HighScore1 {
   
   	/**
@@ -15,8 +20,9 @@ public class HighScore1 {
 	
 	
 	/**
-	 * Return all the lines of the feed.csv file (on our ThingSpeak channel)
-	 **/
+	 Return all the lines of the feed.csv file (on our ThingSpeak channel)
+	 @return a linkedList containing all the lines read from the channel
+	 */
 	 
 	public LinkedList getScores(){
 

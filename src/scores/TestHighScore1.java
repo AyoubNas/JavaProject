@@ -2,6 +2,10 @@ package scores;
 import java.util.*;
 import java.io.*;
 
+	/**
+		@author Jean Miquel and Ayoub Nasraddine
+		@version 1
+	*/
 		
 public class TestHighScore1 {
 
@@ -81,7 +85,6 @@ public class TestHighScore1 {
 		HighScore1 highScores = new HighScore1();
 		System.out.println("   Score table\n");
 		LinkedList oldScores=highScores.getScores();
-		System.out.println("length"+oldScores.size());
 		//afficher les anciens scores
 		System.out.println("......");
 		for (int i=0;i<oldScores.size();i++){

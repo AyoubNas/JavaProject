@@ -2,6 +2,10 @@ package scores;
 import java.util.*;
 import java.io.*;
 
+	/**
+		@author Jean Miquel and Ayoub Nasraddine
+		@version 2
+	*/
 		
 public class TestHighScore2 {
 

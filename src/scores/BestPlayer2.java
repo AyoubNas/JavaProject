@@ -2,6 +2,11 @@ package scores;
 import java.util.*;
 import java.io.*;
 
+	/**
+		@author Jean Miquel and Ayoub Nasraddine
+		@version 2
+	*/
+
 public class BestPlayer2{
 
 	String name=new String();
@@ -32,6 +37,13 @@ public class BestPlayer2{
 
 		name=nm;
 	}
+
+	/**
+		Compares the implicit player (this) to the one given in parameter considering the score
+		@param b player we want to compare the implicit (this) player to
+		@return int =1 if the implicit (this) player has a better score than the one given in parameter, -1 in the opposite case, and 0 if the scores are identicals
+
+	*/
 
 	public int compareTo(BestPlayer2 b){
 
