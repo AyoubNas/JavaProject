@@ -96,7 +96,7 @@ public class TestHighScore2 {
 		//afficher les 10 scores
 		System.out.println("......");
 
-		for (int i=0;i<oldScoresArray.length;i++){
+		for (int i=0;i<tenBest.length;i++){
 
 			String[] parts = (oldScoresArray[i]).split(",");          			
             System.out.println("   "+tenBest[i].getName()+" : "+tenBest[i].getScore());
