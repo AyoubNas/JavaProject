@@ -27,9 +27,11 @@ public class TestHighScore2 {
 		@return a linkedlist containing the scores
 	*/
 
-	private List readScores(){
+		private List readScores(){
 
-		String filePath  = "C:/Users/ayoub/Desktop/ProjetJava/JavaProject/src/scores/scoreFile.csv";
+		File fichier = new File("scores/scoreSamples.txt"); 
+
+		String filePath  = fichier.getAbsolutePath();
 		BufferedReader br = null;
 		String line = "";
 		String separator = ",";
@@ -61,7 +63,7 @@ public class TestHighScore2 {
 		}
 
 		return list;
-	}
+}
 
 	/**
 		randomly picks a value from the list given
