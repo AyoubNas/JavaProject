@@ -93,7 +93,7 @@ public class TestHighScore4 {
 		while(inGame) {
 		
 			//ask for a new game	
-			System.out.println("Do you to play a new game ? (yes/no)")
+			System.out.println("Do you want to play a new game ? (yes/no)")
 			String answer = input.nextLine();
 			if (answer=="yes"){
 			
