@@ -12,7 +12,7 @@ public class BestPlayer2{
 	String name=new String();
 	int score=0;
 
-	void BestPlayer2(String nm, int scr){
+	public BestPlayer2(String nm, int scr){
 
 		score=scr;
 		name=nm;
