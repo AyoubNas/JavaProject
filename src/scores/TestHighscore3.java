@@ -109,14 +109,14 @@ public class TestHighScore3 {
 
 		System.out.println("\n"+	"      "+name+" : "+score);
         
-        //check if the player is qualified to be in the top 10 then report him
-        for (BestPlayer2 p : tenBest)
-        {
-            if (p.getScore() < score)
-            {
-                highScores.sendScore(new BestPlayer2(name,score));
-            }
-        }
+        	//check if the player is qualified to be in the top 10 then report him
+		for (BestPlayer2 p : tenBest)
+        	{
+            		if (p.getScore() < score)
+            		{
+                		highScores.sendScore(new BestPlayer2(name,score));
+            		}
+        	}
 
 	}
 }
