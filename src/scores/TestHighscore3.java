@@ -96,7 +96,7 @@ public class TestHighScore3 {
 		//pick the 10 best ones;
 		BestPlayer2[] tenBest = highScores.tenBestScores(oldScoresArray);
 		
-		//afficher les 10 scores
+		//print the 10 best scores
 		System.out.println("......");
 
 		for (int i=0;i<tenBest.length;i++){
@@ -105,6 +105,8 @@ public class TestHighScore3 {
             System.out.println("   "+tenBest[i].getName()+" : "+tenBest[i].getScore());
 		}
 		System.out.println("......");
+
+		//choose random score from the .txt file
 		int score = test.chooseFromTab(test.readScores());
 
 		System.out.println("\n"+	"      "+name+" : "+score);
@@ -115,6 +117,7 @@ public class TestHighScore3 {
             		if (p.getScore() < score)
             		{
                 		highScores.sendScore(new BestPlayer2(name,score));
+                		break;
             		}
         	}
 

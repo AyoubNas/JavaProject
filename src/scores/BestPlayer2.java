@@ -12,6 +12,10 @@ public class BestPlayer2{
 	String name=new String();
 	int score=0;
 
+	public BestPlayer2(){
+		
+	}
+
 	public BestPlayer2(String nm, int scr){
 
 		score=scr;
