@@ -78,48 +78,66 @@ public class TestHighScore4 {
 	}
 
 	/**
-		simulate a game
+		Ask a player to play a game then simulate a game
 		@param args unused 
 	*/
 	public static void main(String[] args) {
 
-		//get player name
+	
+		//get player name and create the game
 		TestHighScore3 test = new TestHighScore3();
 		String name = test.askName();
-
-		//create HighScores3 instance
-		HighScore3 highScores = new HighScore3();
-		System.out.println("   Score table");
-
-		//get all the stored scores
-		String[] oldScoresArray=highScores.getScores();
-		//pick the 10 best ones;
-		BestPlayer2[] tenBest = highScores.tenBestScores(oldScoresArray);
+		boolean inGame = true;
+		Scanner input = new Scanner(System.in);
 		
-		//print the 10 best scores
-		System.out.println("......");
+		while(inGame) {
+		
+			//ask for a new game	
+			System.out.println("Do you to play a new game ? (yes/no)")
+			String answer = input.nextLine();
+			if (answer=="yes"){
+			
+				//create HighScores3 instance
+				HighScore3 highScores = new HighScore3();
+				System.out.println("   Score table");
 
-		for (int i=0;i<tenBest.length;i++){
+				//get all the stored scores
+				String[] oldScoresArray=highScores.getScores();
+				//pick the 10 best ones;
+				BestPlayer2[] tenBest = highScores.tenBestScores(oldScoresArray);
+		
+				//print the 10 best scores
+				System.out.println("......");
 
-			String[] parts = (oldScoresArray[i]).split(",");          			
-            System.out.println("   "+tenBest[i].getName()+" : "+tenBest[i].getScore());
-		}
-		System.out.println("......");
+				for (int i=0;i<tenBest.length;i++){
 
-		//choose random score from the .txt file
-		int score = test.chooseFromTab(test.readScores());
+					String[] parts = (oldScoresArray[i]).split(",");          			
+            				System.out.println("   "+tenBest[i].getName()+" : "+tenBest[i].getScore());
+				}
+				System.out.println("......");
 
-		System.out.println("\n"+	"      "+name+" : "+score);
+				//choose random score from the .txt file
+				int score = test.chooseFromTab(test.readScores());
+
+				System.out.println("\n"+	"      "+name+" : "+score);
         
-        	//check if the player is qualified to be in the top 10 then report him
-		for (BestPlayer2 p : tenBest)
-        	{
-            		if (p.getScore() < score)
-            		{
-                		highScores.sendScore(new BestPlayer2(name,score));
-                		break;
-            		}
-        	}
-
+        			//check if the player is qualified to be in the top 10 then report him
+				for (BestPlayer2 p : tenBest)
+        			{
+            				if (p.getScore() < score)
+            				{
+                				highScores.sendScore(new BestPlayer2(name,score));
+                				break;
+            				}
+        			}
+			}
+			else if (answer=="no"){
+				inGame = false;
+			}
+			else{
+				System.err.println("incorrect input, please answer yes or no");
+			}
+		}
+		input.close();
 	}
 }
