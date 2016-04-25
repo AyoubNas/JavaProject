@@ -113,16 +113,21 @@ public class HighScore3 {
 		return resList.toArray(new BestPlayer2[1]);
 	}
 
-    public void sendScore(BestPlayer2 p){
-        try {
+	/**
+		Modify the channel on the ThingSpeak server about a player and his score
+		@param sendScores BestPlayer2 we want to send/update on the ThingSpeak channel
+	*/
+
+    	public void sendScore(BestPlayer2 p){
+        	try {
         
-            String nom = p.getName();
-            int score = p.getScore();
-            URL getURL = new URL("https://api.thingspeak.com/update?api_key=P8HE9INZIOGHX1BL&field1="+score+ "&field2="+nom);
-            getURL.openStream();
+            	String nom = p.getName();
+            	int score = p.getScore();
+            	URL getURL = new URL("https://api.thingspeak.com/update?api_key=P8HE9INZIOGHX1BL&field1="+score+ "&field2="+nom);
+            	getURL.openStream();
             
-        } catch (Exception e) { e.printStackTrace(); }
-    }
+        	} catch (Exception e) { e.printStackTrace(); }
+    	}
 
 
 }
