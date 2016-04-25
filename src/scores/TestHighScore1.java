@@ -29,7 +29,7 @@ public class TestHighScore1 {
 
 	private List readScores(){
 
-		File fichier = new File("scores/scoreSamples.txt"); 
+		File fichier = new File("scores/assets/scoreSamples.txt"); 
 
 		String filePath  = fichier.getAbsolutePath();
 		BufferedReader br = null;
