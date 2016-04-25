@@ -5,7 +5,7 @@ import scores.*;
 
 	/**
 		@author Jean Miquel and Ayoub Nasraddine
-		@version 2
+		@version 3
 	*/
 		
 public class TestHighScore3 {
