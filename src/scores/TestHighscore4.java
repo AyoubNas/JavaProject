@@ -95,10 +95,9 @@ public class TestHighScore4 {
 			//ask for a new game	
 			System.out.println("Do you want to play a new game ? (yes/no)");
 			String answer = input.nextLine();
-			//String yes = answer.charAt(0)+answer.charAt(1)+answer.charAt(2);
-			//String no = answer.charAt(0)+answer.charAt(1);
-
-			if (answer=="yes"){
+			String yes="yes";
+			String no = "no";
+			if ((answer.charAt(0)==yes.charAt(0))&&(answer.charAt(1)==yes.charAt(1))&&(answer.charAt(2)==yes.charAt(2))){
 
 			
 				//create HighScores3 instance
@@ -135,7 +134,7 @@ public class TestHighScore4 {
             				}
         			}
 			}
-			else if (answer=="no"){
+			else if ((answer.charAt(0)==no.charAt(0))&&(answer.charAt(1)==no.charAt(1))){
 				inGame = false;
 			}
 			else{

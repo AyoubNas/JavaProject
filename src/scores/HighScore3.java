@@ -6,7 +6,7 @@ import scores.*;
 
 		/**
 		@author Jean Miquel and Ayoub Nasraddine
-		@version 2
+		@version 3
 	*/
 
 public class HighScore3 {
@@ -115,7 +115,7 @@ public class HighScore3 {
 
 	/**
 		Modify the channel on the ThingSpeak server about a player and his score
-		@param sendScores BestPlayer2 we want to send/update on the ThingSpeak channel
+		@param p BestPlayer2 we want to send/update on the ThingSpeak channel
 	*/
 
     	public void sendScore(BestPlayer2 p){
