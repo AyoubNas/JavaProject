@@ -85,7 +85,7 @@ public class TestHighScore4 {
 
 	
 		//get player name and create the game
-		TestHighScore3 test = new TestHighScore3();
+		TestHighScore4 test = new TestHighScore4();
 		String name = test.askName();
 		boolean inGame = true;
 		Scanner input = new Scanner(System.in);
@@ -93,9 +93,13 @@ public class TestHighScore4 {
 		while(inGame) {
 		
 			//ask for a new game	
-			System.out.println("Do you want to play a new game ? (yes/no)")
+			System.out.println("Do you want to play a new game ? (yes/no)");
 			String answer = input.nextLine();
+			//String yes = answer.charAt(0)+answer.charAt(1)+answer.charAt(2);
+			//String no = answer.charAt(0)+answer.charAt(1);
+
 			if (answer=="yes"){
+
 			
 				//create HighScores3 instance
 				HighScore3 highScores = new HighScore3();
