@@ -1,4 +1,6 @@
 # JavaProject
-Projet high-scores
 
-Link to github pages : http://ayoubnas.github.io/JavaProject/
+
+## LINK TO THE STEP 1 GITHUB PAGE:
+
+http://ayoubnas.github.io/JavaProject/
